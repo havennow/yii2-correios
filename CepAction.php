@@ -19,6 +19,11 @@ class CepAction extends \yii\base\Action
     public $formData = [];
 
     /**
+     * @var string with token split location address
+     */
+    public $splitLocation = ['-','address'];
+
+    /**
      * @var string name of query parameter
      */
     public $queryParam = '_cep';
@@ -84,8 +89,17 @@ class CepAction extends \yii\base\Action
                     $cols = $tr->getElementsByTagName('td');
                     list($city, $state) = explode('/', $cols->item(2)->nodeValue);
 
+                    if (!empty($splitLocation)) {
+                        $_location = explode($splitLocation[0], $cols->item(0)->nodeValue);
+                        if ($splitLocation[1] == 'address') {
+                            $location = $_location[0];
+                        }
+                        if ($splitLocation[1] == 'rangeNumber') {
+                            $location = $_location[1];
+                        }
+                    }
                     $result[] = [
-                        'location' => $cols->item(0)->nodeValue,
+                        'location' => trim($location),
                         'district' => $cols->item(1)->nodeValue,
                         'city' => $city,
                         'state' => $state,

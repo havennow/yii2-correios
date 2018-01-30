@@ -20,6 +20,7 @@ class CepInput extends InputWidget
      * @inheritdoc
      */
     public $options = ['class' => 'form-control'];
+    
 
     /**
      * @var string the css search icon class
