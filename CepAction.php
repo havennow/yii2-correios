@@ -89,12 +89,13 @@ class CepAction extends \yii\base\Action
                     $cols = $tr->getElementsByTagName('td');
                     list($city, $state) = explode('/', $cols->item(2)->nodeValue);
 
-                    if (!empty($splitLocation)) {
-                        $_location = explode($splitLocation[0], $cols->item(0)->nodeValue);
-                        if ($splitLocation[1] == 'address') {
+                    $location = $cols->item(0)->nodeValue;
+                    if (!empty($this->splitLocation)) {
+                        $_location = explode($this->splitLocation[0], $cols->item(0)->nodeValue);
+                        if ($this->splitLocation[1] == 'address') {
                             $location = $_location[0];
                         }
-                        if ($splitLocation[1] == 'rangeNumber') {
+                        if ($this->splitLocation[1] == 'rangeNumber') {
                             $location = $_location[1];
                         }
                     }
