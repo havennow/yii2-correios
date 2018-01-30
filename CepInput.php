@@ -20,7 +20,7 @@ class CepInput extends InputWidget
      * @inheritdoc
      */
     public $options = ['class' => 'form-control'];
-    
+
 
     /**
      * @var string the css search icon class
@@ -85,7 +85,7 @@ class CepInput extends InputWidget
         echo Html::beginTag("div", ['class' => 'input-group cep-search', 'id' => $id]);
         echo $input;
         echo Html::beginTag("span", ['class' => 'input-group-btn']);
-        echo Html::beginTag("a", ['class' => 'btn btn-default']);
+        echo Html::beginTag("a", ['class' => 'btn btn-default btn-cep']);
         echo Html::tag("i", null, ['class' => $this->searchIcon]);
         echo Html::endTag("a");
         echo Html::endTag("span");
