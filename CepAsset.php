@@ -6,7 +6,7 @@ use yii\web\AssetBundle;
 
 class CepAsset extends AssetBundle
 {
-    public $sourcePath = '@vendor/yiibr/yii2-correios/assets';
+    public $sourcePath = '@vendor/havennow/yii2-correios/assets';
 
     public $js = [
         'jquery.cep.js',
