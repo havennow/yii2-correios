@@ -1,5 +1,5 @@
 {
-    "name": "yiibr/yii2-correios",
+    "name": "havennow/yii2-correios",
     "description": "Locates an address in Brazil by postal code",
     "keywords": ["yii2", "extension", "correios"],
     "homepage": "https://github.com/yiibr/yii2-correios",
